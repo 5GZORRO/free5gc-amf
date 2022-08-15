@@ -178,6 +178,11 @@ func buildCreateSmContextRequest(ue *amf_context.AmfUe, smContext *amf_context.S
 	// TODO: location is used in roaming scenerio
 	if &ue.Location != nil {
 		ue.GmmLog.Infof("WEIT buildCreateSmContextRequest: set UeLocation: [%+v]", ue.Location)
+		ue.GmmLog.Infof("WEIT buildCreateSmContextRequest UeLocation.NrLocation %+v", ue.Location.NrLocation)
+		ue.GmmLog.Infof("WEIT buildCreateSmContextRequest UeLocation.NrLocation.Tai %+v", ue.Location.NrLocation.Tai)
+		ue.GmmLog.Infof("WEIT buildCreateSmContextRequest UeLocation.NrLocation.Ncgi %+v", ue.Location.NrLocation.Ncgi)
+		ue.GmmLog.Infof("WEIT buildCreateSmContextRequest UeLocation.NrLocation.GlobalGnbId %+v", ue.Location.NrLocation.GlobalGnbId)
+	
 		smContextCreateData.UeLocation = &ue.Location
 	}
 	smContextCreateData.UeTimeZone = ue.TimeZone
